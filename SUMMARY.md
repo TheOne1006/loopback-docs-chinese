@@ -9,4 +9,6 @@
 * [创建一个应用](/CreatingAnApplication/create-an-application.md)
     - [项目布局](/CreatingAnApplication/StandardProjectLayout.md)
     - [启动脚本](/CreatingAnApplication/main-script.md)
-* [用户管理]
+* [用户管理](/ManagingUsers/Overview.md)
+    - [注册](ManagingUsers/register.md)
+    - [登录](ManagingUsers/login.md)
