@@ -10,5 +10,6 @@
     - [项目布局](/CreatingAnApplication/StandardProjectLayout.md)
     - [启动脚本](/CreatingAnApplication/main-script.md)
 * [用户管理](/ManagingUsers/Overview.md)
-    - [注册](ManagingUsers/register.md)
-    - [登录](ManagingUsers/login.md)
+    - [用户注册](ManagingUsers/register.md)
+    - [用户登录](ManagingUsers/login.md)
+    - [用户区分](/ManagingUsers/PartitionUser.md)

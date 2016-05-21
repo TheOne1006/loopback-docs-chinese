@@ -22,6 +22,9 @@ module.exports = function(app) {
   User.create({email: 'foo@bar.com', password: 'bar'}, function(err, user) {
     console.log(user);
   });
+}
+
+
 ```
 
 > 可以通过, POST 方式创建一个新用户
