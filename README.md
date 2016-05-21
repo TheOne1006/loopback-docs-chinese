@@ -39,7 +39,7 @@ LoopBack 框架是由一组Node.js的模块构成的。你可以单独使用这�
 应用程序通过LoopBack model API用以上三种方式查询数据，储存数据，上传文件，发送email, 推送消息，注册/登陆用户等远程或本地的服务。用户也可以通过Strong Remoting将后端的API通过REST, WebSocket(或其他传输协议)供客户端调用。  
 以下的图表展示了核心LoopBack模块，以及他们之间的关系。
 
-![Model inheritance ](images/lb-modules.png)
+![loopback - modules](images/lb-modules.png)
 
 
 ## LoopBack 框架模块
