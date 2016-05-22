@@ -19,3 +19,4 @@
     - [数据访问控制](/AuthenticationAndAuthorization/ControllingDataAccess.md)
     - [认证的请求](/AuthenticationAndAuthorization/authenticatedRequests.md)
     - [定义和使用角色](/AuthenticationAndAuthorization/DefiningAndUsingRoles.md)
+    - [安全注意事项](/AuthenticationAndAuthorization/Security considerations.md)
