@@ -19,4 +19,7 @@
     - [数据访问控制](/AuthenticationAndAuthorization/ControllingDataAccess.md)
     - [认证的请求](/AuthenticationAndAuthorization/authenticatedRequests.md)
     - [定义和使用角色](/AuthenticationAndAuthorization/DefiningAndUsingRoles.md)
-    - [安全注意事项](/AuthenticationAndAuthorization/Security considerations.md)
+    - [安全注意事项](/AuthenticationAndAuthorization/SecurityConsiderations.md)
+* [模型定义](/DefiningModels/index.md)
+    - [模型的创建](/DefiningModels/CreatingModels/Overview.md)
+        - [model 构建器](/DefiningModels/CreatingModels/modelGenerator.md)
