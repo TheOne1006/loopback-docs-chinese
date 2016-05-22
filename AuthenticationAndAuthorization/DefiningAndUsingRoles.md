@@ -66,8 +66,79 @@ Loopback 提供了一下 内置的动态角色:
     同时 属性疲惫到 目标模型对象实例的一个外键. `$owner` 检查只有 `:id` 的 remote 方法 ?
 
 
+使用 `Role.registerResolver()` 注册一个 自定义角色,在 引导脚本中, 这个方法需要两个参数:  
 
+1. 第一个参数: 角色名字符串
+2. 第二个参数: function 确定主要是在指定的作用, `function(role, context, callback)`
 
+Demo
+```js
+// 在 bootScript 中
+module.exports = function(app) {
+  // 获取 Role 的 model
+  var Role = app.models.Role;
+  // 注册名为 teamMember 的橘色名,并设置逻辑
+  // role 新注册的 teamMember 的实例
+  // 上下文, 回调函数 cb , cb(err, false) 为失败, 为 cb(null, true) 为通过
+  Role.registerResolver('teamMember', function(role, context, cb) {
 
+    /**
+     * rejest 认证失败调用方法
+     * @param  err
+     */
+    function reject(err) {
+      if(err) {
+        return cb(err);
+      }
+      cb(null, false);
+    }
+
+    // 角色只真对 project Model
+    if (context.modelName !== 'project') {
+      return reject();
+    }
+
+    // 只能是登录用户
+    var userId = context.accessToken.userId;
+    if (!userId) {
+      return reject(); // do not allow anonymous users
+    }
+
+    // 查找项目id
+    context.model.findById(context.modelId, function(err, project) {
+      // 没找到项目, 权限失败
+      if(err || !project) {
+        reject(err);
+      }
+
+      // 获取 Team
+      var Team = app.models.Team;
+
+      // 查询先关 team 和 user 的关联是否建立
+      Team.count({
+        ownerId: project.ownerId,
+        memberId: userId
+      }, function(err, count) {
+        if (err) {
+          return reject(err);
+        }
+        cb(null, count > 0); // true = is a team member
+      });
+    });
+  });
+};
+```
+
+使用以上方法定义角色后,我们可以限制是该项目的团队成员的用户的项目信息的访问.  
+
+```json
+{
+  "accessType": "READ",
+  "principalType": "ROLE",
+  "principalId": "teamMember",
+  "permission": "ALLOW",
+  "property": "findById"
+}
+```
 
 - - -
