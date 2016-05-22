@@ -23,3 +23,5 @@
 * [模型定义](/DefiningModels/index.md)
     - [模型的创建](/DefiningModels/CreatingModels/Overview.md)
         - [model 构建器](/DefiningModels/CreatingModels/modelGenerator.md)
+        - [关系型数据库](/DefiningModels/CreatingModels/DiscoveringModelsFromRelationalDatabases.md)
+        - [非关系型数据库](/DefiningModels/CreatingModels/CreatingModelsFromUnstructuredData.md)
