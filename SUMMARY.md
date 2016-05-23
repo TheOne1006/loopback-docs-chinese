@@ -25,3 +25,5 @@
         - [model 构建器](/DefiningModels/CreatingModels/modelGenerator.md)
         - [关系型数据库](/DefiningModels/CreatingModels/DiscoveringModelsFromRelationalDatabases.md)
         - [非关系型数据库](/DefiningModels/CreatingModels/CreatingModelsFromUnstructuredData.md)
+* [StrongLoop API 网关](/StrongLoopAPIGateway/index.md)
+    - [OAuth2.0](/StrongLoopAPIGateway/OAuth2.0.md)
