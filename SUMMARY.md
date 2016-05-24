@@ -27,3 +27,6 @@
         - [非关系型数据库](/DefiningModels/CreatingModels/CreatingModelsFromUnstructuredData.md)
 * [StrongLoop API 网关](/StrongLoopAPIGateway/index.md)
     - [OAuth2.0](/StrongLoopAPIGateway/OAuth2.0.md)
+    - [设置API网关](/StrongLoopAPIGateway/SettingUpTheAPIGateway.md)
+    - [Gateway 案例](/StrongLoopAPIGateway/GatewayExample/OverView.md)
+    - [Gateway 案例-教程1](/StrongLoopAPIGateway/GatewayExample/notesAppPlain.md)
