@@ -29,6 +29,42 @@ Loopback可以很方便地从现有的关系型数据库创建model, 这个过�
 
 #### discovery 案例
 
+下面代码使用了 Oracle 数据库,
+第一步创建 Oracle 的数据源。
+然后使用 `discoverAndBuildModels()`方法从 table 中创建model
+
+```js
+var loopback = require('loopback');
+var ds = loopback.createDataSource('oracle', {
+  "host": "demo.strongloop.com",
+  "port": 1521,
+  "database": "XE",
+  "username": "demo",
+  "password": "L00pBack"
+});
+
+// 发现以及创建 models 从 INVENTORY 表, 是否有主键，外键
+ds.discoverAndBuildModels('INVENTORY', {visited: {}, associations: true},function (err, models) {
+    // 这里我们可以使用 models 方法了
+    // 测试model 方法是否能使用
+    models.Inventory.findOne({}, function (err, inv) {
+        if(err) {
+            console.error(err);
+            return;
+        }
+        console.log("\nInventory: ", inv);
+        // Navigate to the product model
+        inv.product(function (err, prod) {
+            console.log("\nProduct: ", prod);
+            console.log("\n ------------- ");
+        });
+    });
+});
+```
+
+#### 添加 discovery 方法
+
+
 
 #### 案例
 

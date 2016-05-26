@@ -25,6 +25,8 @@
         - [model 构建器](/DefiningModels/CreatingModels/modelGenerator.md)
         - [关系型数据库](/DefiningModels/CreatingModels/DiscoveringModelsFromRelationalDatabases.md)
         - [非关系型数据库](/DefiningModels/CreatingModels/CreatingModelsFromUnstructuredData.md)
+    - [将model 链接到数据源](/DefiningModels/AttachModelsToDataSources.md)
+    - [将模型暴漏给REST](/DefiningModels/ExposingModelsOverREST.md)
 * [StrongLoop API 网关](/StrongLoopAPIGateway/index.md)
     - [OAuth2.0](/StrongLoopAPIGateway/OAuth2.0.md)
     - [设置API网关](/StrongLoopAPIGateway/SettingUpTheAPIGateway.md)
