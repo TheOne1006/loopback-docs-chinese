@@ -143,15 +143,97 @@ Loopback 会自动创建 一批 Node 方法 以及对应的 REST endpoints。
 
 #### 隐藏的方法和REST端点
 
-如果你不希望暴漏某些 create, retrieve, update, delete 操作, 你可以通过 在 model 中 调用`disableRemoteMethod()` 隐藏他们
+如果你不希望暴漏某些 create, retrieve, update, delete 操作, 你可以通过 在 model 中 调用`disableRemoteMethod()` 隐藏他们.
+
+案例在 location model 的 脚本文件 `common/models/location.js` 中:  
+
+```js
+var isStatic = true;
+// 禁用 deleteById
+MyModel.disableRemoteMethod('deleteById', isStatic);
+```
+之后  `deleteById()` 和相应的端点,将不被暴露.  
+
+对于原型对象方法，例如在方法  updateAttributes(), 禁用方法为:
+
+```js
+var isStatic = true;
+// 禁用 deleteById
+MyModel.disableRemoteMethod('updateAttributes', isStatic);
+```
+> 确保 使用的 你的自定义类, 而不是继承而来的那个类.
 
 
+以下是更多的禁用案例, 禁用 MyUser 的所有方法,除了 登录和登出:  
+
+```js
+
+MyUser.disableRemoteMethod("create", true);
+MyUser.disableRemoteMethod("upsert", true);
+MyUser.disableRemoteMethod("updateAll", true);
+
+MyUser.disableRemoteMethod("updateAttributes", false);
+
+MyUser.disableRemoteMethod("find", true);
+MyUser.disableRemoteMethod("findById", true);
+MyUser.disableRemoteMethod("findOne", true);
+
+MyUser.disableRemoteMethod("deleteById", true);
+
+MyUser.disableRemoteMethod("confirm", true);
+MyUser.disableRemoteMethod("count", true);
+MyUser.disableRemoteMethod("exists", true);
+MyUser.disableRemoteMethod("resetPassword", true);
 
 
+MyUser.disableRemoteMethod('__count__accessTokens', false);
+MyUser.disableRemoteMethod('__create__accessTokens', false);
+MyUser.disableRemoteMethod('__delete__accessTokens', false);
+MyUser.disableRemoteMethod('__destroyById__accessTokens', false);
+MyUser.disableRemoteMethod('__findById__accessTokens', false);
+MyUser.disableRemoteMethod('__get__accessTokens', false);
+MyUser.disableRemoteMethod('__updateById__accessTokens', false);
+```
+
+#### 案例: 只读端点(endpoints)
+
+如果你希望只露出只读模型,隐藏所有POST，PUT，DELETE操作:  
+
+```js
+// Removes (POST) /products
+Product.disableRemoteMethod('create', true);
+// Removes (PUT) /products
+Product.disableRemoteMethod('upsert', true);
+// Removes (DELETE) /products/:id
+Product.disableRemoteMethod('deleteById', true);
+// Removes (POST) /products/update
+Product.disableRemoteMethod("updateAll", true);
+// Removes (PUT) /products/:id
+Product.disableRemoteMethod("updateAttributes", false);
+// removes (GET|POST) /products/change-stream
+Product.disableRemoteMethod('createChangeStream', true);
+```
 
 
+#### 相关模型隐藏端点
+
+要禁用相关模型方法REST端点，使用 __disableRemoteMethod()__:
+
+案例对于 `Post模型`:  
+
+```js
+module.exports = function(Post) {
+  Post.disableRemoteMethod('__get__tags', false);
+  Post.disableRemoteMethod('__create__tags', false);
+  Post.disableRemoteMethod('__destroyById__accessTokens', false); // DELETE
+  Post.disableRemoteMethod('__updateById__accessTokens', false); // PUT
+};
+```
 
 
+#### 隐藏属性
 
+在 `common/models/model.json` 中定义 hidden 属性
 
-- - -
+1. hidden : false, 不设置隐藏
+2. hidden : ['属性1','属性2'], 隐藏 属性1和属性2
