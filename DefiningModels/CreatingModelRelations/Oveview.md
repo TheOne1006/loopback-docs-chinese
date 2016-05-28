@@ -29,7 +29,7 @@
 4. HasManyThrough relations
 5. HasAndBelongsToMany relations
 6. Polymorphic relations
-7. Embedded relations (embedsOne and embedsMany)
+7. Embedded relations (embedsOne and embedsMany) 显示主体区别
 
 你可以在 model 定义JSON 文件中 或者 js 代码中定义。  
 

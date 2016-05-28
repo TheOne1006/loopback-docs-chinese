@@ -2,8 +2,8 @@
 
 loopback 官网地址: <https://loopback.io>  
 loopback 官网教程: <https://docs.strongloop.com/display/public/LB/LoopBack>  
-loopback GITHUB: <https://github.com/strongloop/loopback>
-部分中文的教程: <https://docs.strongloop.com/display/zh/LoopBack>
+loopback GITHUB: <https://github.com/strongloop/loopback>  
+部分中文的教程: <https://docs.strongloop.com/display/zh/LoopBack>  
 
 #### 目的
 
