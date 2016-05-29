@@ -30,6 +30,7 @@
     - [验证模型数据](/DefiningModels/ValidatingModelData.md)
     - [模型关联](/DefiningModels/CreatingModelRelations/Oveview.md)
         - [model relations教程](/DefiningModels/CreatingModelRelations/modelRelations.md)
+        - [BelongsTo](/DefiningModels/CreatingModelRelations/BelongsTo.md)
 * [StrongLoop API 网关](/StrongLoopAPIGateway/index.md)
     - [OAuth2.0](/StrongLoopAPIGateway/OAuth2.0.md)
     - [设置API网关](/StrongLoopAPIGateway/SettingUpTheAPIGateway.md)
