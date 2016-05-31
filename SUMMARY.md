@@ -36,6 +36,8 @@
         - [HasManyThrough](/DefiningModels/CreatingModelRelations/HasManyThrough.md)
         - [HasAndBelongsToMany](/DefiningModels/CreatingModelRelations/HasAndBelongsToMany.md)
         - [查询相关模型](/DefiningModels/CreatingModelRelations/QueryRelatedModels.md)
+* [内置 Model](/builtInModels/UsingBuiltInModels.md)
+    - [扩展内置 Model](/builtInModels/Extend.md)
 * [StrongLoop API 网关](/StrongLoopAPIGateway/index.md)
     - [OAuth2.0](/StrongLoopAPIGateway/OAuth2.0.md)
     - [设置API网关](/StrongLoopAPIGateway/SettingUpTheAPIGateway.md)
