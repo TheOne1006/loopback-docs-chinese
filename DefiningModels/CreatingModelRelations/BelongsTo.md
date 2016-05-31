@@ -55,9 +55,7 @@ Order 这个 model 有一个外键 关联到 目标(Customer) Model 的主键.
 }
 ```
 
-> ?? 没有指定 foreignKey
-
-另外,也可以在代码中定义,但是比建议  
+另外,也可以在代码中定义,但是不建议  
 
 ```js
 Order.belongsTo(Customer, {foreignKey: 'customerId'});
@@ -65,7 +63,7 @@ Order.belongsTo(Customer, {foreignKey: 'customerId'});
 
 如果声明模型没有一个外键属性, LoopBack 将会添加一个 Model 同名 , 默认关联外键为 Model 的id
 
-如果不指定, LoopBack 派生关系的名称和外键规则如下:  
+如果不指定foreignKey(外键), LoopBack 派生关系的名称和外键规则如下:  
 
 - Relation name: 驼峰化 Model Name ,如 Customer => customer
 - Foreign key: 追加的关系名称 "Id", 如 Customer 的默认外键是 customerId

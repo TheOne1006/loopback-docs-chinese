@@ -31,6 +31,8 @@
     - [模型关联](/DefiningModels/CreatingModelRelations/Oveview.md)
         - [model relations教程](/DefiningModels/CreatingModelRelations/modelRelations.md)
         - [BelongsTo](/DefiningModels/CreatingModelRelations/BelongsTo.md)
+        - [HasOne](/DefiningModels/CreatingModelRelations/HasOne.md)
+        - [HasMany](/DefiningModels/CreatingModelRelations/HasMany.md)
 * [StrongLoop API 网关](/StrongLoopAPIGateway/index.md)
     - [OAuth2.0](/StrongLoopAPIGateway/OAuth2.0.md)
     - [设置API网关](/StrongLoopAPIGateway/SettingUpTheAPIGateway.md)
