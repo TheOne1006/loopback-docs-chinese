@@ -1,0 +1,21 @@
+{
+  "plugins": [
+      "disqus",
+      "-search",
+      "search-pro",
+      "github"
+  ],
+  "pluginsConfig": {
+    "disqus": {
+      "shortName": "theone12138"
+    },
+    "search-pro": {
+        "cutWordLib": "nodejieba",
+        "defineWord" : ["loopback 中文","loopback 文档"]
+    },
+    "github": {
+        "url": "https://github.com/TheOne1006"
+    }
+
+  }
+}

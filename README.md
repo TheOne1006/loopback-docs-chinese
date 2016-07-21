@@ -8,7 +8,10 @@ loopback GITHUB: <https://github.com/strongloop/loopback>
 #### 目的
 
 现在国内缺少 loopback 的中文文档,小生不才,偶遇loopback, 略懂英文 和 Google  
-^\_^,欢迎交流与吐槽
+^\_^,欢迎交流与吐槽  
+
+该文档 github 地址: <https://github.com/TheOne1006/loopback-docs-chinese> ,欢迎指正
+gitbook 地址: <https://theone1006.gitbooks.io/loopback-docs-chinese/content/>
 
 ### 简介
 
