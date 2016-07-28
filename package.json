@@ -1,16 +1,17 @@
 {
   "name": "loopback-docs-chinese",
   "version": "1.0.0",
-  "description": "Loopback 部分中文的教程:",
+  "description": "Loopback 部分中文的教程",
   "main": "index.js",
   "dependencies": {
     "gitbook-plugin-disqus": "^0.1.0",
-    "gitbook-plugin-github": "^2.0.0"
+    "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-search-pro": "^1.0.9",
+    "gitbook-plugin-splitter": "0.0.7",
+    "gitbook-plugin-toggle-chapters": "0.0.3"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TheOne1006/loopback-docs-chinese.git"

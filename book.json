@@ -1,13 +1,24 @@
 {
-  "gitbook": ">=3.2.0",
-  "language": "zh",
+  "gitbook": "^2.6.7",
+  "language": "zh-hans",
+  "title" : "loopback 中文 ",
+  "author" : "wubinjie",
+  "description" : " Loopback 中文文档 交流",
   "plugins": [
       "disqus",
-      "github"
+      "github",
+      "splitter",
+      "toggle-chapters",
+      "-search",
+      "search-pro"
   ],
   "pluginsConfig": {
     "disqus": {
       "shortName": "theone12138"
+    },
+    "search-pro": {
+        "cutWordLib": "nodejieba",
+        "defineWord" : ["loopback 中文","loopback 翻译","loopback 文档"]
     },
     "github": {
         "url": "https://github.com/TheOne1006"

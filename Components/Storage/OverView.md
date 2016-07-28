@@ -5,10 +5,9 @@
     - 案例
 - Containers 和 文件
 - 创建一个存储组件的数据源
-    - 使用 CLI 和 JSON配置
-    - 使用 JavaScript
+    - 使用命令行工具和JSON
+    - 使用 JavaScript配置
     - 提供凭据
-
 
 ### 简介
 
@@ -53,9 +52,99 @@ npm install loopback-component-storage
 
 ### 创建一个存储组件的数据源
 
+创建工具: <https://docs.strongloop.com/display/APIC/Command-line+reference>  
+
+可以使用 命令行工具 或者 `/server/datasources.json`在JavaScript文件 创建.  
+
+##### 使用命令行工具和JSON
+
+```bash
+slc loopback:datasource
+# OR
+apic create --type datasource
+```
+
+然后编辑/server/datasources.json并手动添加数据源的属性,
+
+```js
+// 本地数据
+"storage": {
+  "name": "storage",
+  "connector": "loopback-component-storage",
+  "provider": "filesystem",  // 供应商：“文件系统”
+  "root": "./server/storage" // 路径
+}
+
+// 远程案例
+"myfile": {
+   "name": "myfile",
+   "connector": "loopback-component-storage",
+   "provider": "amazon", //其他相关配置
+   "key": "your amazon key",
+   "keyId": "your amazon key id"
+ }
+```
+
+##### 使用 JavaScript配置
+
+在 `server/server.js` 中使用 `loopback.createDataSource()`方法创建存储组件数据源.  
+
+```js
+// 本地
+var ds = loopback.createDataSource({
+    connector: require('loopback-component-storage'),
+    provider: 'filesystem',
+    root: path.join(__dirname, 'storage')
+});
+
+var container = ds.createModel('container');
+
+// 远程
+var ds = loopback.createDataSource({
+  connector: require('loopback-component-storage'),
+  provider: 'amazon',
+  key: 'your amazon key',
+  keyId: 'your amazon key id'
+});
+var container = ds.createModel('container');
+app.model(container);
+```
+
+##### 其他创建文件
+
+> `/server/model-config.json` 增加配置
+
+```js
+// 增加 container 的 model
+"container": {
+  "dataSource": "storage",
+  "public": true
+}
+```
+
+> `/server/models/container.json` 相关 model 配置
+
+```js
+{
+  "name": "container",
+  "base": "Model",
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
+```
+
+> `/server/models/container.js` 相关逻辑编程
+
+```js
+module.exports = function(Container) {
+
+};
+```
 
 
+##### 提供凭据
 
-
-
-- - -
+具体配置项参照 官网地址 <https://docs.strongloop.com/display/public/LB/Storage+component>  
