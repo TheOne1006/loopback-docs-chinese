@@ -41,7 +41,7 @@
 * [添加应用程序逻辑](/applicationLogic/OverView.md)
 * [LoopBack components 组件](/Components/OverView.md)
     - [Storage component 存储组件](/Components/Storage/OverView.md)
-    - [存储组件REST API](/Components/Storage/REST.md)
+    - [存储组件REST API](/Components/Storage/API.md)
 * [StrongLoop API 网关](/StrongLoopAPIGateway/index.md)
     - [OAuth2.0](/StrongLoopAPIGateway/OAuth2.0.md)
     - [设置API网关](/StrongLoopAPIGateway/SettingUpTheAPIGateway.md)
