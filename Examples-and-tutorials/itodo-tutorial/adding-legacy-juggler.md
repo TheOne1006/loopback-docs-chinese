@@ -2,7 +2,6 @@
 
 - 添加 legacy juggler
   - src/application.ts
-- 导航
 
 
 ### 添加 legacy juggler
@@ -15,3 +14,7 @@ Legacy Juggler 是一个 "桥梁" 用于沟通 现有的 [loopback-datasource-ju
 现在你可以开始设置了, 现在是时候修改它来添加他们 通过 `@loopback/repository`， 安装依赖 `npm i --save @loopback/repository`  
 
 下一步 修改 `src/application.ts` 修改 基础类， 使用 `RepositoryMixin`
+
+完成这一步, 可以进行下一章节 [添加你的 Todo 模型](/Examples-and-tutorials/itodo-tutorial/add-todo-model.md) 了  
+
+更多详情, 查看相关文档
