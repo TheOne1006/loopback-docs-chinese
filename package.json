@@ -1,7 +1,7 @@
 {
-  "name": "loopback-docs-chinese",
+  "name": "loopback4-docs-chinese",
   "version": "1.0.0",
-  "description": "Loopback 部分中文的教程",
+  "description": "Loopback4 部分中文的文档",
   "main": "index.js",
   "dependencies": {
     "gitbook-plugin-disqus": "^0.1.0",
