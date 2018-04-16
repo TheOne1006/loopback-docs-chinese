@@ -1,5 +1,7 @@
 # 创建应用的脚手架
 
+原文: <https://loopback.io/doc/en/lb4/todo-tutorial-scaffolding.html>
+
 - 创建应用的脚手架
 - 目录结构
 - 导航

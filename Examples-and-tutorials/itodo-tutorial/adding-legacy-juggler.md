@@ -1,5 +1,7 @@
 # 添加 legacy juggler
 
+原文: <https://loopback.io/doc/en/lb4/todo-tutorial-juggler.html>
+
 - 添加 legacy juggler
   - src/application.ts
 

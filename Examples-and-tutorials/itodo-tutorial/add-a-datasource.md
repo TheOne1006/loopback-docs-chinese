@@ -1,5 +1,7 @@
 # 添加一个数据源
 
+原文: <https://loopback.io/doc/en/lb4/todo-tutorial-datasource.html>
+
 - 数据源
 - 创建一个数据源
   - config/datasources.json

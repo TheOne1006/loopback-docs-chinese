@@ -1,5 +1,7 @@
 # 添加 Todo 模型
 
+原文: <https://loopback.io/doc/en/lb4/todo-tutorial-model.html>
+
 - 模型
 - 创建你的 Todo 模型
   - src/models/todo.model.ts

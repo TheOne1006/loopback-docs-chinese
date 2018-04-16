@@ -1,5 +1,7 @@
 # 添加存储
 
+原文:<https://loopback.io/doc/en/lb4/todo-tutorial-repository.html>
+
 - 存储
 - 创建你的存储
   - src/repositories/todo.repository.ts

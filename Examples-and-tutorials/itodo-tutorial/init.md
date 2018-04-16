@@ -47,7 +47,7 @@ npm i -g @loopback/cli
 - [添加数据源](/Examples-and-tutorials/itodo-tutorial/add-a-datasource.md)
 - [添加存储](/Examples-and-tutorials/itodo-tutorial/add-a-repository.md)
 - [添加控制器](/Examples-and-tutorials/itodo-tutorial/add-a-controller.md)
-- [把它们放在一起](/Examples-and-tutorials/itodo-tutorial/putting-it-all-together.md)
+- [整合](/Examples-and-tutorials/itodo-tutorial/putting-it-all-together.md)
 
 
 ### 试一试
