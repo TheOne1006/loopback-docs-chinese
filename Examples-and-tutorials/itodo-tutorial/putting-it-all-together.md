@@ -72,7 +72,7 @@ export class TodoListApplication extends BootMixin(
 
   setupDatasources() {
     // This will allow you to test your application without needing to
-    // use a "real" datasource!
+    // use a "real" datasource! 链接到一个真正的数据库
     const datasource =
       this.options && this.options.datasource
         ? new DataSourceConstructor(this.options.datasource)
