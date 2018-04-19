@@ -1,5 +1,7 @@
 # 核心概念
 
+原文链接: <http://loopback.io/doc/en/lb4/Concepts.html>
+
 Loopback 4 中介绍了一些新的重要的概念：
 
   - [应用](/Concepts/Application.md): 用于设置 所有模块组件，控制器，服务器和绑定 的中心类。 Application 类 扩展于 [Context](/Concepts/Context.md) 以及提供 用于启动和停止相关服务的控件

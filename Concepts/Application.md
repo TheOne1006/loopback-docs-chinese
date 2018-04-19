@@ -1,5 +1,7 @@
 # Application
 
+原文链接: <http://loopback.io/doc/en/lb4/Application.html>
+
 - 什么是 应用?
 - 创建你自己的应用类
 - 定义你的应用
