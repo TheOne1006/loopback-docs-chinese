@@ -119,3 +119,79 @@ class MySequence extends DefaultSequence {
 
 - `this.ctx` 可用于序列
 - 允许您使用应用程序中的资源以及实时请求可用资源制定您的响应（当您需要时）
+
+### 上下文中 项目的存储和检索
+
+上下文中项目通过键索引绑定到 `ContextValue`, 一个 `ContextKey` 它只是一个字符串值，用于查找随键一起存储的任何内容。  
+
+例如:
+
+```js
+// 应用级别
+const app = new Application();
+app.bind('hello').to('world'); // contextKey = 'hello', contextValue = 'world'
+console.log(app.getSync<string>('hello')); // => 'world'
+``` 
+
+在这个案例中，我们将 `world`  作为 上下文的项目值存放在 `hello` 的 上下文key 中， 当我们需要 `ContextValue` 通过 `getSync`,  
+
+我们给它一个  `ContextKey` 返回最初的 `ContextValue` 
+
+在上下文注册 `ContextValue` 成为 __绑定__.  
+
+序列级别绑定以相同方式共工作， 有关序列绑定可用函数列表， 通过访问 [上下文 api 文档](http://apidocs.loopback.io/@loopback%2fdocs/context.html#182)。
+
+##### 在绑定键中编码值类型 ??
+
+获取绑定值的代码明确指定了该类型。 这种解决方案远非理想。
+
+1. 使用者必须知道与每个绑定key 的确切名字， 以及从哪导入的
+2. 在调用ctx.get时，消费者必须明确地向编译器提供这种类型，以便从编译型检查中受益。
+3. 在检索价值并获得错误的安全感时，意外提供错误的类型很容易
+
+第三点很重要，因为这些错误可能很微妙而且难以发现。
+
+考虑下面的REST绑定键：
+```js
+export const HOST = 'rest.host';
+```
+
+绑定 key 不提供任何 undefined ， 是HOST绑定的有效值 ？？
+
+？？？？？？
+
+
+
+### 依赖注入
+
+- 许多的配置信息添加到上下文应用中 在你启动/引导的时候
+- 什么时候注册, Context 提供一种运行时使用依赖关系的方法
+
+当然你可以像上节示例中提供的低级辅助方法 类似 `app.getSync` 或者 `sequece` 类提供的方法。
+
+无论如何， 当你使用类时， LoopBack 提供更好的方案， 通过 `@inject` 修饰符添加到 context
+
+```js
+import {inject} from '@loopback/context';
+import {Application} from '@loopback/core';
+
+const app = new Application();
+app.bind('defaultName').to('John');
+
+export class HelloController {
+  constructor(@inject('defaultName') private name: string) {}
+
+  greet(name?: string) {
+    return `Hello ${name || this.name}`;
+  }
+}
+```
+
+注意， 我们只是使用默认名称，就好像它可用于构造函数一样， 
+
+Context 允许 Loopback 提供运行时必要的信息，即时你的控制器编写时还不知道
+
+
+### 上下文元数据和装饰糖
+
+其他有趣的装饰器可以用来帮助 Loopback 提示给你想要提供的附加元数据，以便自动设置
