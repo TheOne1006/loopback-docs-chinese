@@ -43,3 +43,6 @@ class DefaultSequence {
 - Route
 - Request
 - Response
+- OperationRetVal
+- Params
+- OpenAPISpec
